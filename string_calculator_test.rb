@@ -30,6 +30,10 @@ class StringCalculatorTest < MiniTest::Unit::TestCase
     assert_equal 3, StringCalculator.add("//[***]\n1***2")
   end
 
+  def test_multiple_custom_delimiters
+    assert_equal 6, StringCalculator.add("//[*][%]\n1*2%3")
+  end
+
   def test_custom_delimiter_leaves_input_unmodified
     input = "//;\n1;2"
     StringCalculator.add(input)
